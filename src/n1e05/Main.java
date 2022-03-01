@@ -65,7 +65,7 @@ public class Main {
                 return (Person) returnPerson;
 
             } catch (Exception ex) {
-                System.out.println("Object could not be read: "+ pathToRead);;
+                System.out.println("Object could not be read: "+ pathToRead);
                 return null;
             }
         }else{
