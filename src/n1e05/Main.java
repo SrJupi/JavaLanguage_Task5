@@ -57,7 +57,7 @@ public class Main {
         if(Files.exists(pathToRead)){
             try {
 
-                FileInputStream fileIn = new FileInputStream(String.valueOf(pathToRead));
+                InputStream fileIn = Files.newInputStream(pathToRead);
                 ObjectInputStream objectIn = new ObjectInputStream(fileIn);
                 Object returnPerson = objectIn.readObject();
                 objectIn.close();
@@ -65,7 +65,7 @@ public class Main {
                 return (Person) returnPerson;
 
             } catch (Exception ex) {
-                ex.printStackTrace();
+                System.out.println("Object could not be read: "+ pathToRead);;
                 return null;
             }
         }else{
