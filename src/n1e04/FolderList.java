@@ -25,17 +25,17 @@ public class FolderList {
         }
     }
 
-    private static void readReportFile(Path report) {
+    public static void readReportFile(Path report) {
         if(Files.exists(report)){
             String reportText = null;// UTF 8
             try {
                 reportText = Files.readString(report);
+                System.out.println("\nPrinting report from: " + report + "\n\n");
+                System.out.println(reportText);
+                System.out.println("-- End of report --");
             } catch (IOException e) {
-                System.out.println("Report can not be read.");
+                System.out.println("Report can not be read: " + report);
             }
-            System.out.println("\nPrinting report from: " + report + "\n\n");
-            System.out.println(reportText);
-            System.out.println("-- End of report --");
         }else{
             System.out.println("Report does not exist in this path: " + report);
         }

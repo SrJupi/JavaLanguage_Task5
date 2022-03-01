@@ -61,7 +61,7 @@ public class Main {
                 ObjectInputStream objectIn = new ObjectInputStream(fileIn);
                 Object returnPerson = objectIn.readObject();
                 objectIn.close();
-                System.out.println("The Object was successfully read");
+                System.out.println("The Object was successfully read at: " + pathToRead);
                 return (Person) returnPerson;
 
             } catch (Exception ex) {
